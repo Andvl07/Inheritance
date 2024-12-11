@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+
 public class Programm {
     public static void main(String[] args) {
         // Создаем списки (List) студентов и аспирантов
@@ -24,11 +25,12 @@ public class Programm {
         postgraduates.add(new Postgraduate("Сергей Сергеев", "Экономический", 2022, 92, "Профессор Z", "08.00.05"));
         postgraduates.add(new Postgraduate("Ольга Олегова", "Математический", 2020, 78, "Профессор Y", "05.13.11"));
 
-
-        // Получаем информацию о трех лучших студентах первого курса экономического факультета
+        // Получаем информацию о трех лучших студентах первого курса экономического
+        // факультета
         getHighRatingStudents(students);
 
-        // Выясняем, кто из аспирантов специальности 05.13.11 заканчивает обучение в текущем году
+        // Выясняем, кто из аспирантов специальности 05.13.11 заканчивает обучение в
+        // текущем году
         int currentYear = Year.now().getValue();
         getGraduatingPostgraduates(postgraduates, currentYear, "05.13.11");
 
@@ -60,7 +62,8 @@ public class Programm {
 
     // Метод для получения информации об аспирантах, заканчивающих обучение
     static void getGraduatingPostgraduates(List<Postgraduate> postgraduates, int currentYear, String specialityCode) {
-        System.out.println("\nАспиранты специальности " + specialityCode + " которые заканчивают обучение в " + currentYear + " году:");
+        System.out.println("\nАспиранты специальности " + specialityCode + " которые заканчивают обучение в "
+                + currentYear + " году:");
         for (Postgraduate postgraduate : postgraduates) {
             if (postgraduate.specialityCode.equals(specialityCode) && postgraduate.isGraduatingThisYear(currentYear)) {
                 System.out.println(postgraduate);

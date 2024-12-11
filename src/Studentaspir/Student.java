@@ -19,7 +19,7 @@ class Student {
                 ", Рейтинг: " + rating;
     }
 
-    @Override //оператор
+    @Override // оператор
     public String toString() {
         return getFullInfo();
     }
